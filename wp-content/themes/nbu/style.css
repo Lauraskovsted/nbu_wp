@@ -5,3 +5,315 @@
 	Description:  shuttle
 	Author:      gruppe 11
 */
+
+/* Nulstiller alle typografier, så jeg kan lave alt selv */
+* {
+  all: unset;
+  display: revert;
+  cursor: revert;
+  box-sizing: border-box;
+}
+
+/* main {
+  max-width: 1200px;
+  margin: 0 auto;
+} */
+
+body {
+  background-color: #212220;
+}
+
+.filteringsheader {
+  text-align: center;
+}
+
+/***************'* Fonts ***********/
+@font-face {
+  font-family: anton;
+  src: url(Anton/Anton-Regular.ttf);
+}
+@font-face {
+  font-family: bebasneue;
+  src: url(BebasNeue/BebasNeue-Regular.ttf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(Roboto/Roboto-Regular.ttf);
+}
+
+/* Generel baggrundsfarve på hjemmesiden */
+#content {
+  background-color: #212220;
+}
+
+/* Baggrundsfarve og style af artiklerne */
+.holdbeskrivelser {
+  background-color: #eeecee;
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 30px;
+  margin-bottom: 5rem;
+}
+
+/***** filtreringsmenu ****/
+nav,
+button,
+h2 {
+  text-align: center;
+}
+
+/* h2 filtrering header */
+#filtreringsoverskrift {
+  color: #eeecee;
+  margin-top: 2rem;
+}
+
+/* Gør at fodbold og håndbold ikke ligger samme sted */
+.grid_fh {
+  margin-bottom: 3rem;
+}
+
+/* Generel style af knap */
+.sport_btn {
+  background-color: #104f24;
+  color: #eeecee;
+  border-color: #eeecee;
+  font-family: bebasneue;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.hold_btn {
+  background-color: transparent;
+  color: #f9612c;
+  border: #f9612c;
+  font-family: bebasneue;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+#indmeld {
+  border: solid 2px #f9612c;
+  color: #f9612c;
+  background-color: transparent;
+  font-family: bebasneue;
+}
+/* Style af knapper hover effekt */
+.sport_btn:hover {
+  color: #104f24;
+  background-color: #eeecee;
+  border: none;
+}
+
+.hold_btn:hover {
+  background-color: #eeecee;
+  color: #f9612c;
+  border-color: none;
+}
+
+#indmeld:hover {
+  border: solid 2px #213726;
+  color: #eeecee;
+  background-color: #213726;
+}
+
+/* Style af knapper når de er valgt */
+.valgtsport {
+  color: #104f24;
+  background-color: #eeecee;
+  border: none;
+}
+
+.valgt {
+  background-color: #eeecee;
+  color: #f9612c;
+  border-color: transparent;
+}
+
+/* Style af linjer rundt om knapper */
+.line {
+  border-bottom: solid 2.5px #213726;
+  width: 50%;
+  margin-inline: 25%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/******* Generelt for tekst ********/
+h1 {
+  font-family: anton;
+  font-weight: normal;
+  font-size: 87px;
+  color: #eeecee;
+  text-align: center;
+}
+
+h2 {
+  font-family: bebasneue;
+  font-size: 45px;
+  color: #f9612c;
+}
+
+h3 {
+  grid-row: 1;
+  grid-column: 2;
+  place-self: start;
+  color: #f9612c;
+  padding-left: 0px;
+  font-size: 2.5rem;
+  margin-bottom: 3px;
+  font-family: bebasneue;
+}
+
+p {
+  font-family: roboto;
+  color: black;
+  margin-bottom: 0px;
+  grid-row: 1;
+  grid-column: 2;
+  place-self: end start;
+}
+
+.tekst {
+  margin-bottom: 0rem;
+}
+
+#pris {
+  grid-column: 2;
+  grid-row: 2;
+  place-self: end start;
+  font-weight: bold;
+  color: #213726;
+  grid-row: 3;
+  place-self: start;
+}
+
+#kontigent {
+  grid-column: 2;
+  grid-row: 2;
+  place-self: end start;
+  font-weight: bold;
+  color: #213726;
+}
+
+#picture {
+  grid-row: span 3;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/10;
+}
+
+#indmeld {
+  grid-column: 2;
+  grid-row: 3;
+  width: 60%;
+  place-self: end start;
+}
+
+.videolandingpage {
+  object-fit: cover;
+}
+
+/* tablet */
+@media (min-width: 850px) {
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+    width: 80%;
+  }
+  .holdbeskrivelser {
+    margin-bottom: 10rem;
+  }
+
+  .sport_btn {
+    font-size: 30px;
+  }
+
+  .hold_btn {
+    font-size: 25px;
+  }
+
+  #indmeld {
+    grid-column: 2;
+    grid-row: 3;
+    max-width: 20%;
+    place-self: end start;
+    margin-left: 2rem;
+  }
+
+  h2 {
+    font-size: 5rem;
+    margin-bottom: 0rem;
+  }
+
+  h3 {
+    padding-left: 2rem;
+    font-size: 3rem;
+  }
+
+  p {
+    padding-left: 2rem;
+  }
+
+  .tekst {
+    margin-bottom: 0rem;
+    padding-top: 1rem;
+    font-size: 20px;
+  }
+
+  #pris {
+    padding-left: 2rem;
+  }
+
+  #kontigent {
+    padding-left: 2rem;
+  }
+
+  #indmeld {
+    margin-left: 2rem;
+    padding: 5px;
+  }
+
+  .line {
+    width: 50%;
+    margin-inline: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* desktop */
+@media (max-width: 1250px) {
+  #indmeld {
+    max-width: 40%;
+    padding: 2px;
+  }
+  .tekst {
+    margin-bottom: 0rem;
+    font-size: 15px;
+  }
+
+  #pris {
+    font-size: 15px;
+  }
+
+  #kontigent {
+    padding-bottom: 12px;
+    font-size: 15px;
+  }
+
+  .line {
+    width: 50%;
+    margin-inline: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .grid_1-1 {
+    margin: 0 auto;
+    width: 98%;
+  }
+}

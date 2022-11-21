@@ -22,10 +22,12 @@ get_header(); ?>
 	<div class="filteringsheader">
       <nav class="nav_container">
 		<div class="grid_fh">
-		<button data-sport="fodbold" class="hoverb sport_btn valgtsport">Fodbold</button>
-		<button data-sport="handbold" class="hoverb sport_btn">Håndbold</button>
+		<div class="line"></div>
+		<button data-sport="fodbold" class="sport_btn">Fodbold</button>
+		<button data-sport="handbold" class="sport_btn">Håndbold</button>
+		<div class="line"></div>
 		</div>	
-        <button data-hold="alle" class="valgt hold_btn">Alle</button>
+        <button data-hold="alle" class="valgt hoverb hold_btn">Alle</button>
         <button data-hold="23" class="hoverb hold_btn">Børn</button>
         <button data-hold="24" class="hoverb hold_btn">Unge</button>
         <button data-hold="1" class="hoverb hold_btn">Senior</button>
@@ -40,7 +42,7 @@ get_header(); ?>
 		<div class="grid_1-1">
 			<img src="" alt="" id="picture">
 			<h3></h3>
-			<p></p>
+			<p class="tekst"></p>
 			<p id="pris"></p>
 			<p id="kontigent"></p>
 			<button id="indmeld">Indmeld</button>
@@ -109,8 +111,9 @@ function filtrerSport(){
 // finder værdien der ligger i knappens data-attribut.
   nytfilter = this.dataset.sport;
 
-// fjerner klassen valgt fra alle
-document.querySelector(".valgtsport").classList.remove("valgtsport");
+
+// fjerner klassen valgtsport fra alle sportsknapper.
+document.querySelectorAll(".sport_btn").forEach(each=> each.classList.remove("valgtsport"));
 
 // tilføjer klassen valgt til kategorierne der bliver klikket på
 this.classList.add("valgtsport");
@@ -132,6 +135,7 @@ function filtrerHold() {
 
   // tilføjer klassen valgt til kategorierne der bliver klikket på
   this.classList.add("valgt");
+
 
   //Gør at h2 overskriften passer til den valgte kategori
   textOverskrift.textContent = this.textContent;
@@ -158,8 +162,8 @@ const klon = temp.cloneNode(true).content
 klon.querySelector("h2").innerHTML = medlem.title.rendered;
 klon.querySelector("h3").innerHTML = medlem.overskrift_h3;
 klon.querySelector("p").innerHTML = medlem.holdbeskrivelse;
-klon.querySelector("#pris").innerHTML = "Indmeldingspris " + medlem.pris;
-klon.querySelector("#kontigent").innerHTML = "kontigent " + medlem.kontigent;
+klon.querySelector("#pris").innerHTML = "Indmeldingspris " + medlem.pris.slice(0, 3) + " kr.";
+klon.querySelector("#kontigent").innerHTML = "Kontingent " + medlem.kontingent.slice(0, 3) + " kr.";
 klon.querySelector("#picture").src = medlem.billede.guid;
 
 // Gør at indholdet bliver tilføjet til min template

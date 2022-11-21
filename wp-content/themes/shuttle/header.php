@@ -17,7 +17,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <?php wp_head(); ?>
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?> /custom.css">
+
 </head>
 
 <body <?php body_class(); ?><?php shuttle_bodystyle(); ?>>
